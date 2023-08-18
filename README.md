@@ -1,15 +1,13 @@
-# how this thing works
+# notes
 
 - Rust code goes into `src/main.rs`. The Rust code goes in there.
 - Run the program by `cargo run` (in the main directory, not in src)
 - The Rust code (should) generate a `.sdpa` file (in the main directory). Run `csdp` on this file.
 
-# flag-algebra
+# original documentation
 
-A generic implementation of
-[flag algebras](http://people.cs.uchicago.edu/~razborov/files/flag.pdf).
-
-Flag algebras is a framework used to produce computer-assisted proofs of some inequalities in combinatorics, relying on Semi-Definite Programming.
+This is a generic implementation of
+[flag algebras](http://people.cs.uchicago.edu/~razborov/files/flag.pdf);credit for base code goes to Rémi de Verclos's [rust-flag-algebra](https://github.com/avangogo/rust-flag-algebra/tree/master/src) crate. 
 
 ## Example
 
