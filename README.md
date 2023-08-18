@@ -1,5 +1,8 @@
 # notes
 
+(1) the Rust code takes a set of forbidden flags (represented as induced digraphs) and produces a semidefinite programming problem.
+(2) use CSDP to solve the output `sdpa`, 
+
 - Rust code goes into `src/main.rs`. The Rust code goes in there.
 - Run the program by `cargo run` (in the main directory, not in src)
 - The Rust code (should) generate a `.sdpa` file (in the main directory). Run `csdp` on this file.
