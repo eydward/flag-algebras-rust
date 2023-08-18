@@ -1,7 +1,0 @@
-/target/
-**/*.rs.bk
-*#
-*~
-*.sdpa
-target/*
-data/*
