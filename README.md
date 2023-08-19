@@ -1,11 +1,10 @@
 # notes
 
-(1) the Rust code takes a set of forbidden flags (represented as induced digraphs) and produces a semidefinite programming problem.
-(2) use CSDP to solve the output `sdpa`, 
+The text file `forbidden_digraphs` contains a set of digraphs to forbid as subgraphs. Since this is flag algebras after all, the code will forbid the *induced subgraph*. So if we want to compute the Turán number $\pi(D)$ of some digraph $D$, then `forbidden_digraphs` will have to contain all supergraphs of $D$.
 
-- Rust code goes into `src/main.rs`. The Rust code goes in there.
-- Run the program by `cargo run` (in the main directory, not in src)
-- The Rust code (should) generate a `.sdpa` file (in the main directory). Run `csdp` on this file.
+If you `cargo run` (faster: `cargo run --release`), Rust will read `forbidden_digraphs` and output a corresponding flag algebras semidefinite programming problem solvable with [CSDP](https://github.com/coin-or/Csdp). This will appear as the file `turan_output.sdpa`.
+
+Then run `csdp turan_output.sdpa` to use CSDP to solve the optimization problem. Note that, since we are *maximizing* $\pi(D)$ and CSDP prefers to solve *minimization* problems, CSDP actually gets you the *negative* the upper bound on the Turán number.
 
 # original documentation
 
