@@ -2,12 +2,19 @@ use flag_algebra::flags::DirectedGraph;
 use flag_algebra::*;
 use operator::Basis;
 use sdp::Problem;
+use std::io;
 
 mod parse;
 
 pub fn main() {
     init_default_log();
-    let basis: Basis<DirectedGraph> = Basis::new(5);
+
+
+    let mut n : String = Default::default();
+    io::stdin().read_line(&mut n).expect("Error reading input");
+    let n = n.trim().parse().expect("Error parsing number");
+
+    let basis: Basis<DirectedGraph> = Basis::new(n);
 
     let arc: QFlag<f64, DirectedGraph> = flag(&DirectedGraph::new(2, [(0, 1)]));
     let asy: QFlag<f64, DirectedGraph> = flag(&DirectedGraph::new(2, [(0, 1), (1, 0)]));
